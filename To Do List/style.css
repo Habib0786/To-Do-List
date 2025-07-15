@@ -1,0 +1,131 @@
+/* Global Reset and Base Styles */
+* {
+  margin: 0; /* Remove default margin */
+  padding: 0; /* Remove default padding */
+  font-family: "Poppins", "sans-serif"; /* Set a clean and modern font */
+  box-sizing: border-box; /* Include padding and border inside width/height */
+}
+
+/* Main Container for Page Background */
+.container {
+  padding: 10px;
+  width: 100%;
+  min-height: 100vh; /* Full screen height */
+  background: linear-gradient(
+    135deg,
+    #780000,
+    #fdf0d5,
+    #003049
+  ); /* Beautiful diagonal gradient */
+}
+
+/* Wrapper Box for the To-Do App */
+.todo-app {
+  width: 100%;
+  max-width: 540px; /* Responsive max width */
+  margin: 100px auto 20px; /* Center it with top margin */
+  padding: 40px 30px 70px;
+  background-color: antiquewhite; /* Light background */
+  border-radius: 15px; /* Rounded corners */
+}
+
+/* Icon/Image inside the app (e.g., logo) */
+.todo-app .todo-img {
+  height: 30px;
+  margin-left: 10px;
+}
+
+/* App Heading Styling */
+.todo-app h2 {
+  color: #003049; /* Dark bluish text color */
+  margin-bottom: 30px;
+  align-items: center;
+  display: flex; /* Aligns icon and text on the same row */
+}
+
+/* Row container for input and button */
+.row {
+  display: flex;
+  align-items: center; /* Vertically center items */
+  background-color: ghostwhite;
+  justify-content: space-between; /* Space between input and button */
+  padding-left: 20px;
+  margin-bottom: 25px;
+  border-radius: 30px; /* Pill-shaped look */
+}
+
+/* Input field styling */
+input {
+  flex: 1; /* Takes up remaining space */
+  background: transparent;
+  outline: none; /* Removes blue border on focus */
+  border: none;
+  padding: 10px;
+  font-size: 14px; /* Should be font-size (you may fix this) */
+}
+
+/* Add Task Button styling */
+button {
+  border: none;
+  outline: none;
+  background-color: #780000; /* Dark red background */
+  color: white;
+  padding: 15px 25px;
+  border-radius: 30px; /* Rounded button */
+  font-size: 15px;
+  cursor: pointer; /* Pointer on hover */
+}
+
+/* Task List Item */
+ul li {
+  list-style: none; /* Remove default bullet */
+  font-size: 17px;
+  padding: 12px 8px 12px 50px; /* Left padding to fit custom bullet */
+  user-select: none; /* Prevent text selection */
+  cursor: pointer; /* Indicate clickable */
+  position: relative; /* Needed for absolute ::before and span */
+}
+
+/* Custom Checkbox Before Each Task */
+ul li::before {
+  content: "";
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  background-image: url(images/unchecked.png); /* Default icon */
+  border-radius: 50%;
+  background-size: cover;
+  background-position: center;
+  top: 8px;
+  left: 8px;
+}
+
+/* Checked Task Text Style */
+ul li.checked {
+  color: #555; /* Dim the text */
+  text-decoration: line-through; /* Strike-through to show completion */
+}
+
+/* Change Checkbox Icon for Checked Task */
+ul li.checked::before {
+  background-image: url(images/Selected.png); /* Checked icon */
+}
+
+/* Delete Button (X) inside each task */
+ul li span {
+  position: absolute;
+  height: 40px;
+  width: 40px;
+  color: #780000;
+  right: 0; /* Position at the right of task */
+  text-align: center;
+  line-height: 40px; /* Vertically center X */
+  font: 22px; /* Incorrect: should be font-size or full font declaration */
+  border-radius: 50%;
+  font-size: 30px;
+}
+
+/* Hover Effect on Delete Button */
+ul li span:hover {
+  background: burlywood; /* Highlight delete icon background on hover */
+}
